@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0b1020">
+<title>ORHAN WORLD</title>
+<style>
+*{box-sizing:border-box} :root{--bg:#0b1020;--panel:#151d36;--text:#f5f7ff;--muted:#b8c2df;--cyan:#57e6ff;--purple:#a78bfa}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at 15% 10%,#253568 0,transparent 32%),radial-gradient(circle at 85% 80%,#38245f 0,transparent 30%),var(--bg);color:var(--text);min-height:100vh}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px clamp(16px,5vw,70px);border-bottom:1px solid #ffffff20;gap:14px;flex-wrap:wrap}.logo{font-weight:900;color:var(--cyan);font-size:20px;direction:ltr}nav{display:flex;gap:18px;flex-wrap:wrap}nav button{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:8px}nav button:hover{color:var(--cyan)}
+main{max-width:1050px;margin:auto;padding:40px 20px}.hero{text-align:center;padding:40px 12px 48px}.tag{display:inline-block;border:1px solid #57e6ff66;color:var(--cyan);background:#57e6ff12;border-radius:999px;padding:8px 15px;font-size:13px}h1{font-size:clamp(40px,9vw,78px);margin:22px 0 12px;line-height:1.15;direction:ltr;background:linear-gradient(90deg,var(--cyan),#fff,var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}.subtitle{color:var(--muted);font-size:17px;line-height:2;margin:0 auto 25px;max-width:650px}.button{border:0;display:inline-block;background:linear-gradient(100deg,#26cde8,#8b72f5);color:#081020;text-decoration:none;font-weight:bold;padding:13px 24px;border-radius:13px;cursor:pointer;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:15px}.card{background:linear-gradient(145deg,#1a2545ee,#12182dee);border:1px solid #ffffff20;border-radius:20px;padding:23px;min-height:165px;text-align:right;color:var(--text);cursor:pointer;font:inherit;transition:.2s;box-shadow:0 12px 35px #0003}.card:hover,.card:focus{transform:translateY(-5px);border-color:var(--cyan);outline:none}.icon{font-size:32px}.card h2{font-size:18px;margin:12px 0 8px}.card p{color:var(--muted);font-size:14px;line-height:1.9;margin:0}.about{margin-top:45px;text-align:center;background:#ffffff08;border:1px solid #ffffff15;border-radius:22px;padding:25px}.about p{color:var(--muted);line-height:2}
+.page{display:none;max-width:760px;margin:20px auto;background:#ffffff0b;border:1px solid #ffffff20;border-radius:24px;padding:clamp(22px,5vw,40px);min-height:300px}.page.active{display:block;animation:appear .25s ease}@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.page h2{font-size:28px;margin-top:0}.page p,.page li{color:var(--muted);line-height:2}.back{background:#ffffff14;border:1px solid #ffffff25;color:white;padding:10px 16px;border-radius:12px;cursor:pointer;font:inherit;margin-bottom:22px}.back:hover{border-color:var(--cyan)}.home-content.hidden{display:none}footer{text-align:center;color:#8d9abb;padding:30px 15px 38px;font-size:12px}
+@media(max-width:560px){header{justify-content:center}nav{justify-content:center}main{padding-top:25px}.hero{padding-top:25px}}
+</style></head>
+<body>
+<header><div class="logo">✦ ORHAN WORLD</div><nav aria-label="منوی اصلی"><button onclick="showHome()">خانه</button><button onclick="showHome(true)">علاقه‌مندی‌ها</button><button onclick="showAbout()">درباره سایت</button></nav></header>
+<main>
+<div id="homeContent" class="home-content">
+<section class="hero" id="home"><span class="tag">به دنیای من خوش اومدی ✨</span><h1>ORHAN WORLD</h1><p class="subtitle">اینجا دنیای خلاقیت، بازی و ماجراجوییه؛ جایی برای ایده‌های بزرگ و اتفاق‌های باحال!</p><button class="button" onclick="document.getElementById('cards').scrollIntoView({behavior:'smooth'})">بزن بریم 🚀</button></section>
+<section id="cards" class="grid" aria-label="بخش‌های سایت">
+<button class="card" onclick="openPage('games')"><div class="icon">🎮</div><h2>دنیای گیم</h2><p>ماجراجویی‌ها و بازی‌های موردعلاقه‌ام.</p></button>
+<button class="card" onclick="openPage('minecraft')"><div class="icon">🧱</div><h2>ماینکرفت</h2><p>ساختن دنیاهای تازه و ایده‌های مکعبی!</p></button>
+<button class="card" onclick="openPage('ideas')"><div class="icon">💡</div><h2>ایده‌های من</h2><p>ایده‌های خلاقانه‌ای که قراره به واقعیت تبدیل بشن.</p></button>
+<button class="card" onclick="openPage('luka')"><div class="icon">🐦</div><h2>دوست پردار</h2><p>یک گوشه‌ی دوست‌داشتنی برای ماجراهای لوکا.</p></button>
+</section><section class="about"><h2>اینجا ORHAN WORLD است 🌟</h2><p>این سایت شخصی منه؛ قراره کم‌کم با عکس‌ها، پروژه‌ها و چیزهای موردعلاقه‌ام کامل‌تر بشه.</p></section>
+</div>
+<section id="games" class="page"><button class="back" onclick="showHome()">← برگشت به خانه</button><h2>🎮 دنیای گیم</h2><p>به بخش بازی‌ها خوش اومدی! اینجا می‌تونی بازی‌های موردعلاقه‌ات و ماجراجویی‌هات رو معرفی کنی.</p><ul><li>بازی‌های محبوب من</li><li>خاطره‌ها و رکوردهای بازی</li><li>ماجراجویی‌های جدید</li></ul></section>
+<section id="minecraft" class="page"><button class="back" onclick="showHome()">← برگشت به خانه</button><h2>🧱 دنیای ماینکرفت</h2><p>اینجا دنیای مکعبی ماست؛ پر از ساخت‌وساز، اکتشاف و ماجراجویی!</p><ul><li>ساختمان‌های خلاقانه</li><li>جهان‌ها و نقشه‌های موردعلاقه</li><li>پروژهٔ Minecraft vs Mad God</li></ul></section>
+<section id="ideas" class="page"><button class="back" onclick="showHome()">← برگشت به خانه</button><h2>💡 ایده‌های من</h2><p>هر فکر خلاقانه‌ای می‌تونه شروع یک پروژهٔ باحال باشه.</p><ul><li>ایده‌های ساخت بازی</li><li>پروژه‌های ویدیویی</li><li>چیزهایی که دوست دارم یاد بگیرم</li></ul></section>
+<section id="luka" class="page"><button class="back" onclick="showHome()">← برگشت به خانه</button><h2>🐦 دنیای لوکا</h2><p>به بخش مخصوص لوکا خوش اومدی! اینجا می‌تونی عکس‌ها، حرف‌های بامزه و خاطراتش رو جمع کنی.</p><ul><li>حرف‌های بامزهٔ لوکا</li><li>خاطرات و بازی‌ها</li><li>عکس‌های دوست کوچولوم</li></ul></section>
+<section id="aboutPage" class="page"><button class="back" onclick="showHome()">← برگشت به خانه</button><h2>🌟 درباره ORHAN WORLD</h2><p>این سایت شخصی برای نمایش علاقه‌مندی‌ها، بازی‌ها و پروژه‌های خلاقانه ساخته شده. از منوی خانه می‌تونی وارد هر بخش بشی.</p></section>
+</main><footer>ساخته‌شده با کلی خلاقیت 💙 · ORHAN WORLD</footer>
+<script>
+function hideAll(){document.getElementById('homeContent').classList.add('hidden');document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));window.scrollTo({top:0,behavior:'smooth'});}
+function openPage(id){hideAll();document.getElementById(id).classList.add('active');}
+function showHome(scrollCards=false){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('homeContent').classList.remove('hidden');if(scrollCards){setTimeout(()=>document.getElementById('cards').scrollIntoView({behavior:'smooth'}),50)}else{window.scrollTo({top:0,behavior:'smooth'})}}
+function showAbout(){openPage('aboutPage')}
+</script></body></html>
